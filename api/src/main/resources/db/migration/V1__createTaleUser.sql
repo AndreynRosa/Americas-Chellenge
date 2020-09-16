@@ -1,4 +1,4 @@
-CREATE TABLE empresa (
+CREATE TABLE user_tbl (
   id BIGINT(20) NOT NULL AUTO_INCREMENT,
   email VARCHAR(100),
   pss VARCHAR(100),
