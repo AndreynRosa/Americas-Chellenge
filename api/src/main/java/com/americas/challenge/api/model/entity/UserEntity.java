@@ -32,10 +32,10 @@ public class UserEntity implements Serializable{
 
     @ManyToMany
     @JoinTable( 
-	        name = "user_roles", 
+	        name = "user_role", 
 	        joinColumns = @JoinColumn(
 	          name = "user_tbl_id", referencedColumnName = "email"), 
 	        inverseJoinColumns = @JoinColumn(
-	          name = "role_id", referencedColumnName = "role_acess")) 
+	          name = "role_tbl_id", referencedColumnName = "role_acess")) 
     private List<RoleEntity> roles;
 }

@@ -1,2 +1,2 @@
 INSERT INTO
-  roles (role_acess) value("ADMINISTRADOR");
+  role_tbl (role_acess) value("ADMINISTRADOR");
