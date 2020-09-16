@@ -1,0 +1,5 @@
+CREATE TABLE user_tbl (
+  email VARCHAR(100) NOT NULL,
+  pss VARCHAR(100) NOT NULL,
+  PRIMARY KEY (email)
+)  ENGINE = InnoDB DEFAULT CHARSET = utf8;
