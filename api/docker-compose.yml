@@ -15,22 +15,22 @@ services:
     networks:
       - project-network
   
-  api-project:
-    image: api-project
-    restart: always
-    depends_on:   
-     - mysql
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    ports:
-      - "9080:9080"
-    environment: 
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydb?createDatabaseIfNotExist=true&useSSL=false
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
-    networks:
-      - project-network
+  # api-project:
+  #   image: api-project
+  #   restart: always
+  #   depends_on:   
+  #    - mysql
+  #   build:
+  #     context: ./
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "9080:9080"
+  #   environment: 
+  #     SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydb?createDatabaseIfNotExist=true&useSSL=false
+  #     SPRING_DATASOURCE_USERNAME: root
+  #     SPRING_DATASOURCE_PASSWORD: root
+  #   networks:
+  #     - project-network
     
 networks:
   project-network:
