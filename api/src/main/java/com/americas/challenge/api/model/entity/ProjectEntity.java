@@ -14,13 +14,17 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "project")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "project")
 public class ProjectEntity implements Serializable{
 
     /**

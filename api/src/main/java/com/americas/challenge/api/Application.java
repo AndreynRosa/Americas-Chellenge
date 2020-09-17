@@ -1,6 +1,6 @@
 package com.americas.challenge.api;
 
-
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -23,13 +23,20 @@ public class Application {
 
     @PostConstruct
     public void initUsers() {
-        ProjectEntity projectA = ProjectEntity.builder().clientName("Projeto Cliente A")
-                .roles(Stream.of(RoleEntity.builder().role_acess("ADMINISTRADOR").build(),
-                        RoleEntity.builder().role_acess("PROGRAMADOR1").build(),
-                        RoleEntity.builder().role_acess("PROGRAMADOR2").build()).collect(Collectors.toList()))
-                .build();
+        List<ProjectEntity> allProjects = projectRepository.findAll();
 
-        projectRepository.save(projectA);
+        if (allProjects.size() > 0) {
+            ProjectEntity projectA = ProjectEntity.builder().clientName("Projeto Cliente A")
+                    .roles(Stream
+                            .of(RoleEntity.builder().role_acess("ADMINISTRADOR").build(),
+                                    RoleEntity.builder().role_acess("PROGRAMADOR1").build(),
+                                    RoleEntity.builder().role_acess("PROGRAMADOR2").build())
+                            .collect(Collectors.toList()))
+                    .build();
+
+            projectRepository.save(projectA);
+        }
+
     }
 
     public static void main(final String[] args) {
