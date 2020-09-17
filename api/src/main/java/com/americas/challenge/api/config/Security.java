@@ -1,6 +1,6 @@
 package com.americas.challenge.api.config;
 
-import com.americas.challenge.api.service.MyUserDetailsService;
+import com.americas.challenge.api.service.UserDetailsServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -24,7 +24,7 @@ public class Security extends WebSecurityConfigurerAdapter {
     private JwtFilter JwtFilter;
 
     @Autowired
-    private MyUserDetailsService myUserDetailsService;
+    private UserDetailsServiceImpl myUserDetailsService;
 
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {

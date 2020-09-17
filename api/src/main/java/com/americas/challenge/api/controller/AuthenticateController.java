@@ -2,7 +2,7 @@ package com.americas.challenge.api.controller;
 
 import com.americas.challenge.api.model.auth.AuthenticationRequest;
 import com.americas.challenge.api.model.auth.AuthenticationResponse;
-import com.americas.challenge.api.service.MyUserDetailsService;
+import com.americas.challenge.api.service.UserDetailsServiceImpl;
 import com.americas.challenge.api.util.JwtUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,7 @@ public class AuthenticateController {
     private JwtUtil jwtUtil;
 
     @Autowired
-    private MyUserDetailsService userDetailsService;
+    private UserDetailsServiceImpl userDetailsService;
 
     @Autowired
     private AuthenticationManager authenticationManager;
