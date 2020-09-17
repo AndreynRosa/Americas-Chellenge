@@ -1,6 +1,5 @@
 package com.americas.challenge.api.controller;
 
-import com.americas.challenge.api.config.JwtFilter;
 
 import com.americas.challenge.api.model.dto.projectRegisterWorkRequestDTO;
 import com.americas.challenge.api.service.ProjectServiceImpl;
@@ -26,9 +25,6 @@ public class ProjectController {
 
     @Autowired
     private ProjectServiceImpl service;
-
-    @Autowired
-    private JwtFilter jwtFilter;
 
     @GetMapping(value = "")
     @ApiOperation(value = "Returns projects for which the user informed via jwt is authorized.")

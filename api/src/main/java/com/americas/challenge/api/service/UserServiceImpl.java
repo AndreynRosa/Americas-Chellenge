@@ -4,7 +4,6 @@ import com.americas.challenge.api.model.entity.UserEntity;
 import com.americas.challenge.api.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 @Service
