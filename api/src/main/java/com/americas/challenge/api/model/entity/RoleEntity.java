@@ -8,11 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Entity
 @Data
 @Table(name = "role_tbl")
+@Builder
 public class RoleEntity {
 
     @Id

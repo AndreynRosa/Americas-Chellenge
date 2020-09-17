@@ -1,0 +1,9 @@
+package com.americas.challenge.api.repository;
+
+import com.americas.challenge.api.model.entity.ProjectEntity;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProjectRepository extends JpaRepository<ProjectEntity, Integer> {
+
+}
