@@ -34,8 +34,8 @@ public class UserEntity implements Serializable{
     @JoinTable( 
 	        name = "user_role", 
 	        joinColumns = @JoinColumn(
-	          name = "user_tbl_id", referencedColumnName = "email"), 
+	          name = "fk_user_email", referencedColumnName = "email"), 
 	        inverseJoinColumns = @JoinColumn(
-	          name = "role_tbl_id", referencedColumnName = "role_acess")) 
+	          name = "fk_role_acess", referencedColumnName = "role_acess")) 
     private List<RoleEntity> roles;
 }

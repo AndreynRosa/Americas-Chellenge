@@ -1,0 +1,5 @@
+CREATE TABLE project(
+  id INT NOT NULL AUTO_INCREMENT,
+  client_name VARCHAR(20),
+  PRIMARY KEY (id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
