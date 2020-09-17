@@ -8,7 +8,9 @@ import javax.annotation.PostConstruct;
 
 import com.americas.challenge.api.model.entity.ProjectEntity;
 import com.americas.challenge.api.model.entity.RoleEntity;
+import com.americas.challenge.api.model.entity.UserEntity;
 import com.americas.challenge.api.repository.ProjectRepository;
+import com.americas.challenge.api.service.UserServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -21,11 +23,14 @@ public class Application {
     @Autowired
     private ProjectRepository projectRepository;
 
+    @Autowired
+    private UserServiceImpl userService;
+
     @PostConstruct
     public void initUsers() {
         List<ProjectEntity> allProjects = projectRepository.findAll();
 
-        if (allProjects.size() > 0) {
+        if (allProjects.size() <= 0) {
             ProjectEntity projectA = ProjectEntity.builder().clientName("Projeto Cliente A")
                     .roles(Stream
                             .of(RoleEntity.builder().role_acess("ADMINISTRADOR").build(),
@@ -34,7 +39,34 @@ public class Application {
                             .collect(Collectors.toList()))
                     .build();
 
+            ProjectEntity projectB = ProjectEntity.builder().clientName("Projeto Cliente A")
+                    .roles(Stream
+                            .of(RoleEntity.builder().role_acess("ADMINISTRADOR").build(),
+                                    RoleEntity.builder().role_acess("PROGRAMADOR2").build())
+                            .collect(Collectors.toList()))
+                    .build();
+
             projectRepository.save(projectA);
+            projectRepository.save(projectB);
+
+            UserEntity userAdm = UserEntity.builder().email("adm@adm.com")
+                    .pss("$2a$10$tI9GgKjj/KpVACfAIyRSJu/R3NSLxIHqccbVzyYwIAiMA2XTBDjeS").roles(Stream
+                            .of(RoleEntity.builder().role_acess("ADMINISTRADOR").build()).collect(Collectors.toList()))
+                    .build();
+            UserEntity userProgamador1 = UserEntity.builder().email("programado1@adm.com")
+                    .pss("$2a$10$tI9GgKjj/KpVACfAIyRSJu/R3NSLxIHqccbVzyYwIAiMA2XTBDjeS").roles(Stream
+                            .of(RoleEntity.builder().role_acess("PROGRAMADOR1").build()).collect(Collectors.toList()))
+                    .build();
+
+            UserEntity userProgamador2 = UserEntity.builder().email("programado2@adm.com")
+                    .pss("$2a$10$tI9GgKjj/KpVACfAIyRSJu/R3NSLxIHqccbVzyYwIAiMA2XTBDjeS").roles(Stream
+                            .of(RoleEntity.builder().role_acess("PROGRAMADOR2").build()).collect(Collectors.toList()))
+                    .build();
+
+            userService.save(userAdm);
+            userService.save(userProgamador1);
+            userService.save(userProgamador2);
+
         }
 
     }
