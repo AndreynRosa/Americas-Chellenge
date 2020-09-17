@@ -2,8 +2,9 @@ package com.americas.challenge.api.model.entity;
 
 import java.util.List;
 
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
@@ -24,6 +25,7 @@ public class RoleEntity {
     @Id
     private String role_acess;
 
-    @ManyToMany
-    private List<UserEntity> users;
+    // @ManyToMany(fetch = FetchType.EAGER)
+    // @Column()
+    // private List<UserEntity> users;
 }
