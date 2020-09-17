@@ -14,12 +14,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/authenticate")
-@CrossOrigin("*")
+@RequestMapping("/api/authenticate")
+@CrossOrigin(origins = "*")
+@Api(value = "Porject API REST")
 public class AuthenticateController {
 
     @Autowired
@@ -32,6 +37,7 @@ public class AuthenticateController {
     private AuthenticationManager authenticationManager;
 
     @PostMapping(value = "")
+    @ApiOperation( value = "Athenticate the user and returns jwt.")
     public ResponseEntity<AuthenticationResponse> createAuthenticationToken(@RequestBody AuthenticationRequest request)
             throws Exception {
         try {

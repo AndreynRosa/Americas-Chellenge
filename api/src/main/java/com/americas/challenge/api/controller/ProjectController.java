@@ -5,7 +5,6 @@ import com.americas.challenge.api.config.JwtFilter;
 import com.americas.challenge.api.model.dto.projectRegisterWorkRequestDTO;
 import com.americas.challenge.api.service.ProjectServiceImpl;
 
-import org.hibernate.jdbc.Expectations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +13,14 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.ApiOperation;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/project")
+@RequestMapping("/api/project")
 @CrossOrigin("*")
 public class ProjectController {
 
@@ -30,11 +31,13 @@ public class ProjectController {
     private JwtFilter jwtFilter;
 
     @GetMapping(value = "")
+    @ApiOperation(value = "Returns projects for which the user informed via jwt is authorized.")
     public ResponseEntity<?> findAllByRoleAthorization(Authentication authentication) {
         return ResponseEntity.ok(service.findAllByRoleAthorization(authentication.getName()));
     }
 
     @PostMapping(value = "/register")
+    @ApiOperation(value = "The user informed in the jwt creates work record in the pointed project")
     public ResponseEntity<?> projectRegisterWork(@RequestBody projectRegisterWorkRequestDTO request,
             Authentication authentication) {
         try {
