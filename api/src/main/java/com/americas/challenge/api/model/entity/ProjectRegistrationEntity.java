@@ -14,18 +14,27 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.americas.challenge.api.model.enums.ErrorEnum;
+
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
+@ToString
 @Table(name = "project_registration")
-public class ProjectRegistatrionEntity implements Serializable {
+public class ProjectRegistrationEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -48,5 +57,23 @@ public class ProjectRegistatrionEntity implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_date")
     private Date createDate;
+
+    public static class ProjectRegistrationEntityBuilder {
+        private Integer id;
+        private ProjectEntity project;
+        private UserEntity user;
+        private Float workedHours;
+        private Date createDate;
+
+        public ProjectRegistrationEntityBuilder checkUserHasHoleAcess(UserEntity user, ProjectEntity project) {
+            user.getRoles().stream().forEach(projectRole -> {
+                if (!project.getRoles().contains(projectRole)) {
+                    throw new UsernameNotFoundException(ErrorEnum.USERT_NOT_AUTHORIZED.toString());
+                }
+                return;
+            });
+            return this;
+        }
+    }
 
 }

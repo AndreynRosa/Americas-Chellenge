@@ -5,23 +5,28 @@ import java.util.Optional;
 
 import com.americas.challenge.api.model.dto.projectRegisterWorkRequestDTO;
 import com.americas.challenge.api.model.entity.ProjectEntity;
+import com.americas.challenge.api.model.entity.ProjectRegistrationEntity;
 import com.americas.challenge.api.model.entity.RoleEntity;
 import com.americas.challenge.api.model.entity.UserEntity;
-import com.americas.challenge.api.model.enums.ErrorEnum;
 import com.americas.challenge.api.repository.ProjectRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
+
+import io.swagger.annotations.Authorization;
 
 
 @Service
 public class ProjectServiceImpl implements ProjectService {
+    
     @Autowired
     private ProjectRepository repository;
 
     @Autowired
     private UserServiceImpl userService;
+
+    @Autowired
+    private ProjectRegistrationService projectRegistrationService;
 
     @Override
     public List<ProjectEntity> findAllByRoleAthorization(String emailUser) {
@@ -35,16 +40,23 @@ public class ProjectServiceImpl implements ProjectService {
     public void projectRegisterWork(String emailUser, projectRegisterWorkRequestDTO request) {
         UserEntity user = userService.findByEmail(emailUser);
         ProjectEntity project = findById(request.getProjectId());
-        boolean isAuthorization = checkUserHasHoleAcess(project.getRoles(), user.getRoles());
-        Assert.isTrue(isAuthorization, ErrorEnum.USERT_NOT_AUTHORIZED.toString());
 
+        ProjectRegistrationEntity workRegister = ProjectRegistrationEntity.builder().createDate(request.getDate())
+                .user(userService.findByEmail(emailUser))
+                .project(findById(request.getProjectId()))
+                .checkUserHasHoleAcess(user, project)
+                .workedHours(request.getTime()).build();
+
+    System.out.println(workRegister);
+    
+    projectRegistrationService.save(workRegister);
     }
 
-    private boolean checkUserHasHoleAcess(List<RoleEntity> projectRoles, List<RoleEntity> userRoles) {
-        return projectRoles.stream().anyMatch(projectRole -> {
-            return userRoles.contains(projectRole);
-        });
-    }
+    // private boolean checkUserHasHoleAcess(List<RoleEntity> projectRoles, List<RoleEntity> userRoles) {
+    //     return projectRoles.stream().anyMatch(projectRole -> {
+    //         return userRoles.contains(projectRole);
+    //     });
+    // }
 
     @Override
     public ProjectEntity findById(Integer id) {

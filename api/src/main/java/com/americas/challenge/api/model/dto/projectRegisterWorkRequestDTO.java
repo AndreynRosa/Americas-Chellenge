@@ -13,6 +13,6 @@ public class projectRegisterWorkRequestDTO {
     
     private Integer projectId;
     private Date date;
-    private Double time;
+    private Float time;
 
 }

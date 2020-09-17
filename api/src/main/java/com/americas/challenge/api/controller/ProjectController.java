@@ -1,6 +1,5 @@
 package com.americas.challenge.api.controller;
 
-
 import com.americas.challenge.api.model.dto.projectRegisterWorkRequestDTO;
 import com.americas.challenge.api.service.ProjectServiceImpl;
 
@@ -39,7 +38,7 @@ public class ProjectController {
         try {
             service.projectRegisterWork(authentication.getName(), request);
         } catch (Exception e) {
-            return (ResponseEntity<?>) ResponseEntity.badRequest();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized user in porject");
         }
         return ResponseEntity.status(HttpStatus.CREATED).body("Create register on Project");
     }
