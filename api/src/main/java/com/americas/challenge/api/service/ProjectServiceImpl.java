@@ -3,6 +3,7 @@ package com.americas.challenge.api.service;
 import java.util.List;
 
 import com.americas.challenge.api.model.entity.ProjectEntity;
+import com.americas.challenge.api.model.entity.RoleEntity;
 import com.americas.challenge.api.model.entity.UserEntity;
 import com.americas.challenge.api.repository.ProjectRepository;
 
@@ -20,7 +21,8 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public List<ProjectEntity> findAllByRoleAthorization(String email) {
         UserEntity user = userService.findByEmail(email);
-        List<ProjectEntity> projects = repository.findAllByRolesIn(user.getRoles());
+        List<RoleEntity> roles = user.getRoles();
+        List<ProjectEntity> projects = repository.findAllByRolesIn(roles);
 
         return projects;
     }
