@@ -9,7 +9,7 @@ export default createGlobalStyle`
   }
 
 body {
-    background: #fff;
+    background: ${(props) => props.theme.colors.background};
     -webkit-font-smoothing: antialiased;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -17,6 +17,7 @@ body {
     font-variant: normal;
     font-weight: 400;
     line-height: 20px;
+    color: ${props => props.theme.colors.text};
  }
 
 h1 {
