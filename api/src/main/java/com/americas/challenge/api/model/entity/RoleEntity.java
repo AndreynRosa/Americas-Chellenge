@@ -23,7 +23,4 @@ public class RoleEntity {
     @Id
     private String role_acess;
 
-    // @ManyToMany(fetch = FetchType.EAGER)
-    // @Column()
-    // private List<UserEntity> users;
 }

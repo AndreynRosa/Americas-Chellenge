@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class projectRegisterWorkRequestDTO {
+public class ProjectRegistrationRequestDTO {
     
     private Integer projectId;
     private Date date;

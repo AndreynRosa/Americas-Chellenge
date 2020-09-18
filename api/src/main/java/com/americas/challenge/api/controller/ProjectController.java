@@ -1,6 +1,6 @@
 package com.americas.challenge.api.controller;
 
-import com.americas.challenge.api.model.dto.projectRegisterWorkRequestDTO;
+import com.americas.challenge.api.model.dto.ProjectRegistrationRequestDTO;
 import com.americas.challenge.api.service.ProjectServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,7 @@ public class ProjectController {
 
     @PostMapping(value = "/register")
     @ApiOperation(value = "The user informed in the jwt creates work record in the pointed project")
-    public ResponseEntity<?> projectRegisterWork(@RequestBody projectRegisterWorkRequestDTO request,
+    public ResponseEntity<?> projectRegisterWork(@RequestBody ProjectRegistrationRequestDTO request,
             Authentication authentication) {
         try {
             service.projectRegisterWork(authentication.getName(), request);
