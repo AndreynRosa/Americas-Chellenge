@@ -22,7 +22,6 @@ public class ProjectRegistrationServiceImpl implements ProjectRegistrationServic
 
     @Override
     public List<ProjectRegistrationEntity> findByProject(ProjectEntity project) {
-      
         return repository.findAllByProject(project);
     }
     

@@ -1,8 +1,8 @@
 package com.americas.challenge.api.model.dto;
 
-import java.util.ArrayList;
+
 import java.util.Date;
-import java.util.List;
+
 
 import com.americas.challenge.api.model.entity.ProjectRegistrationEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;

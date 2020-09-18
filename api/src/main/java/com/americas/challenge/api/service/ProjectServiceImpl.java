@@ -59,4 +59,10 @@ public class ProjectServiceImpl implements ProjectService {
         return opt.orElse(null);
     }
 
+    @Override
+    public ProjectEntity save(ProjectEntity project) {
+        
+        return repository.save(project);
+    }
+
 }

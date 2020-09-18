@@ -13,4 +13,7 @@ public interface ProjectService {
     void projectRegisterWork(String emailUser, ProjectRegistrationRequestDTO request);
 
     ProjectEntity findById(Integer id);
+
+    ProjectEntity save(ProjectEntity project);
+
 }
