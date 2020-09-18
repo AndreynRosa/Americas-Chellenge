@@ -17,7 +17,7 @@ const Routes = () => {
     <>
       <Router history={hist}>
         <Switch>
-          <ReactDOMRoute path="/" component={Login} />
+          <ReactDOMRoute exact path="/" component={Login} />
           <Route path="/projects" component={Projects} isPrivate />
         </Switch>
       </Router>

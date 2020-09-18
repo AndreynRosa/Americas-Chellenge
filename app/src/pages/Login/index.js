@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState, useEffect } from 'react';
 
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Button from '../../components/Button';
 
 import Input from '../../components/Input';
@@ -8,11 +8,15 @@ import Input from '../../components/Input';
 import { Container, Form } from './styles';
 
 const Login = () => {
+  const history = useHistory();
+
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email, password);
+
+    history.push('/projects');
   }, []);
 
   useEffect(() => {

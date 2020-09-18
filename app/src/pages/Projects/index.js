@@ -1,11 +1,17 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Container, GridContainer, GridItem } from './styles';
 
 const Projects = () => {
   return (
     <>
-      <h1>Project</h1>{' '}
+      <Container>
+        <h1>Projects</h1>{' '}
+        <GridContainer>
+          <GridItem>1</GridItem>
+          <GridItem>2</GridItem>
+        </GridContainer>
+      </Container>
     </>
   );
 };
