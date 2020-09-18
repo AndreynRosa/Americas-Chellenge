@@ -1,6 +1,6 @@
 package com.americas.challenge.api.ProjectRegistration;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.stream.Collectors;
@@ -49,10 +49,8 @@ public class ProjectRegistrationValidationTest {
                 .roles(Stream.of(RoleEntity.builder().role_acess("PROGAMADOR1").build()).collect(Collectors.toList()))
                 .build();
         Assertions.assertThrows(RuntimeException.class, () -> {
-            ProjectRegistrationEntity projectRegistration = ProjectRegistrationEntity.builder().user(userAdm)
-                    .project(project).checkUserHasHoleAcess(userAdm, project).build();
-
-                 
+             ProjectRegistrationEntity.builder().user(userAdm)
+                    .project(project).checkUserHasHoleAcess(userAdm, project).build();   
         });
 
     }

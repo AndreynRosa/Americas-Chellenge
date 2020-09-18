@@ -8,24 +8,20 @@ import com.americas.challenge.api.model.entity.ProjectRegistrationEntity;
 import com.americas.challenge.api.model.entity.RoleEntity;
 import com.americas.challenge.api.model.entity.UserEntity;
 import com.americas.challenge.api.repository.ProjectRegistrationRepository;
-import com.americas.challenge.api.service.UserServiceImpl;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 public class ProjectRegistrationRepositoryTest {
 
     @Autowired
     private ProjectRegistrationRepository repository;
 
-    @Autowired
-    private UserServiceImpl usserService;
+    // @Autowired
+    // private UserServiceImpl usserService;
 
 
     @Test
