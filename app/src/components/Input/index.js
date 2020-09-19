@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { PropTypes } from 'prop-types';
+import React, { useEffect } from 'react';
 import { Container } from './styles';
 
 const Input = ({ label, name, ...rest }) => {
   useEffect(() => {
     console.log('nputRef.current?.targe', name);
-  }, []);
+  }, [name]);
 
   return (
     <>

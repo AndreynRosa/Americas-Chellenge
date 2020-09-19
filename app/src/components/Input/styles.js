@@ -1,8 +1,6 @@
-import styled, { css } from 'styled-components';
-
+import styled from 'styled-components';
 
 export const Container = styled.div`
   margin-top: 2rem;
   width: 100%;
 `;
-

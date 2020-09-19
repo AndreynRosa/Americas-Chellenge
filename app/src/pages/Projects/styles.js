@@ -5,7 +5,7 @@ export const Container = styled.div`
   margin: auto;
   width: 80%;
   min-height: 30rem;
-  margin-top: 10rem;
+  margin-top: 8rem;
   padding: 10px;
   text-align: center;
 `;

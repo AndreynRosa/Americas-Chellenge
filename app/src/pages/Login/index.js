@@ -1,13 +1,19 @@
-import React, { useCallback, useRef, useState, useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
 import Button from '../../components/Button';
 
 import Input from '../../components/Input';
+import { authenticate } from '../../store/actions/auth';
 
 import { Container, Form } from './styles';
 
 const Login = () => {
+  const isAuthUser = useSelector((state) => state.auth.isAuthUser);
+
+  const dispatch = useDispatch();
+
   const history = useHistory();
 
   const handleSubmit = useCallback(async (e) => {
@@ -15,13 +21,13 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email, password);
-
-    history.push('/projects');
-  }, []);
-
-  useEffect(() => {
-    console.log('useRef.current');
-  }, []);
+    try {
+      await dispatch(authenticate(email, password));
+      history.push('/project');
+    } catch (e) {
+      alert('Unespect error');
+    }
+  }, [dispatch]);
 
   return (
     <>
