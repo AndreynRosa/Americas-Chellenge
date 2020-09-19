@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/api/authenticate")
-// @CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 @Api(value = "Porject API REST")
 public class AuthenticateController {
 

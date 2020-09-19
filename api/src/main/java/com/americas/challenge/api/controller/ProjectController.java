@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/api/project")
-// @CrossOrigin("*")
+@CrossOrigin("*")
 public class ProjectController {
 
     @Autowired
