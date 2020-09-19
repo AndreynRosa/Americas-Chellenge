@@ -8,7 +8,6 @@ export default function auth(state, action) {
   }
   switch (action.type) {
     case 'POST_AUTH':
-      console.log('POST_AUTH ', action);
       return {
         ...state,
         email: action.payload.email,

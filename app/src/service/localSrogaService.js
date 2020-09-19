@@ -8,10 +8,10 @@ export function updateLocalStorage(email, token) {
 }
 
 export function getToken() {
-  console.log("pegouToken")
-  return localStorage.getItem('@Mvpproject:jwt');
+  let jwt = sessionStorage.getItem('@Mvpproject:jwt');
+  return jwt
 }
 
 export function setJwtToLocalStorage(jwt) {
-  sessionStorage.setItem('@Mvpproject:jwt', `Bearer ${jwt}`);
+  sessionStorage.setItem('@Mvpproject:jwt', `${jwt}`);
 }

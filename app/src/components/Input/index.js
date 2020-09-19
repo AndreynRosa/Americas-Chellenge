@@ -3,7 +3,6 @@ import { Container } from './styles';
 
 const Input = ({ label, name, ...rest }) => {
   useEffect(() => {
-    console.log('nputRef.current?.targe', name);
   }, [name]);
 
   return (

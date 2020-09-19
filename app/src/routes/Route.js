@@ -14,7 +14,7 @@ const Route = ({ isPrivate = false, component: Component, ...rest }) => {
     <ReactDOMRoute
       {...rest}
       render={({ location }) => {
-        return isPrivate === (jwtToken == null) ? (
+        return isPrivate === (jwtToken != null) ? (
           <Component />
         ) : (
           <Redirect
