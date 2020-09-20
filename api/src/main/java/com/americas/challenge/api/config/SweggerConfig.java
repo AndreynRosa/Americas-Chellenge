@@ -32,7 +32,6 @@ public class SweggerConfig {
                 "Terms of Service",
                 new Contact("Andrey Rosa", "https://github.com/AndreynRosa", "andreynrosa@gmail.com"),
                 "Apache License Version 2.0", "https://www.apache.org/licesen.html", new ArrayList<VendorExtension>());
-
         return apiInfo;
     }
 
