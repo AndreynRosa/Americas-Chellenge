@@ -28,7 +28,7 @@ public class SweggerConfig {
 
     private ApiInfo metaInfo() {
 
-        ApiInfo apiInfo = new ApiInfo("Porject API REST", "MVP - API REST to control rpoject .", "1.0",
+        ApiInfo apiInfo = new ApiInfo("Porject API REST", "MVP - API REST to control project .", "1.0",
                 "Terms of Service",
                 new Contact("Andrey Rosa", "https://github.com/AndreynRosa", "andreynrosa@gmail.com"),
                 "Apache License Version 2.0", "https://www.apache.org/licesen.html", new ArrayList<VendorExtension>());

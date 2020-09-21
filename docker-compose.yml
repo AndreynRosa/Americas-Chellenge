@@ -21,7 +21,7 @@ services:
   #   depends_on:   
   #    - mysql
   #   build:
-  #     context: ./
+  #     context: ./api
   #     dockerfile: Dockerfile
   #   ports:
   #     - "9080:9080"
