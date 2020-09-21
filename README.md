@@ -9,11 +9,12 @@
   <li>Autorização com JWT </li>
   <li>Aplicando conheicimentos de SOLID e Pattern builder fluent  com ajuda do lombok </li>
    <li>Versionamento do backo de dados com Flyway </li>
+    <li>Swegger para documentação dos recursos disponíveis </li>
 </ul>
 
-### Soubir a aplicação Java </br>
+### Subir a aplicação Java </br>
 
-<p>1 - passo subir banco de dados no diretório raiz. </p>
+<p>1° - para subir o banco de dados no diretório raiz. </p>
 
 
 ``````
@@ -22,9 +23,12 @@
 
 ``````
 
-2 - aplicação java </br>
+2° - aplicação java </br>
  <p> Starte normalmente com springboot application, ela já está apontando para banco dados </br>
-</p>
+</p></br>
+
+<h5> Documentação swegger </h5>
+<p>http://localhost:9080/swagger-ui.html#/</p>
   
 <h4> Front-end </h4>
  
