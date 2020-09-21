@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 import Button from '../../components/Button';
 import Input from '../../components/Input';
+import { setEmailToLocalStorage } from '../../service/localSrogaService';
 import { authLoadRequest } from '../../store/ducks/auth/actions';
 import { AuthUserState } from '../../store/ducks/auth/types';
 
@@ -26,6 +27,7 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     try {
+      setEmailToLocalStorage(email);
       dispatch(authLoadRequest(email, password));
     } catch (e) {
       alert('Unespect error');

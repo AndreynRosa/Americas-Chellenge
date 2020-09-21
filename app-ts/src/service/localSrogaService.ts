@@ -2,14 +2,16 @@ export function cleanLocalStorage() {
   sessionStorage.clear();
 }
 
-export function updateLocalStorage(email: string, token: string) {
+export function setEmailToLocalStorage(email: string) {
   sessionStorage.setItem('@Mvpproject:email', email);
-  sessionStorage.setItem('@MvpprojectJ:jwt', token);
 }
 
+export function getEmailToLocalStorage() {
+  return sessionStorage.getItem('@Mvpproject:email');
+}
 export function getToken() {
   let jwt = sessionStorage.getItem('@Mvpproject:jwt');
-  return jwt
+  return jwt;
 }
 
 export function setJwtToLocalStorage(jwt: string) {

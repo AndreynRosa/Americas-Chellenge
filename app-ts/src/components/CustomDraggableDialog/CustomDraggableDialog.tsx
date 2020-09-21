@@ -16,7 +16,7 @@ interface Props {
 export const CustomDraggableDialog: React.FC<Props> = (props: Props, ...rest) => {
   const [open, setOpen] = React.useState(false);
 
-  const { children,  btnName, title } = props;
+  const { children, btnName, title } = props;
 
   const handleClickOpen = () => {
 
@@ -26,7 +26,6 @@ export const CustomDraggableDialog: React.FC<Props> = (props: Props, ...rest) =>
   const handleClose = () => {
     setOpen(false);
   };
-
   return (
     <div>
       <Btn {...rest} onClick={handleClickOpen}>

@@ -10,6 +10,7 @@ import { getToken } from '../service/localSrogaService';
 interface RouteProps extends ReactDOMRouteProps {
   isPrivate?: boolean;
   component: React.ComponentType;
+  props?: any
 }
 
 const Route: React.FC<RouteProps> = ({

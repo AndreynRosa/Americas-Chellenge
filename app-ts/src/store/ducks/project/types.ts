@@ -53,5 +53,5 @@ export interface ProjectsPageObject{
 
 export interface ProjectStates {
   data: Projectobjs[]
-  details: ProjectsResponse
+  details: ProjectResponse[]
 }
