@@ -58,7 +58,7 @@ public class Application {
                             .of(RoleEntity.builder().role_acess("PROGRAMADOR1").build()).collect(Collectors.toList()))
                     .build();
 
-            UserEntity userProgamador2 = UserEntity.builder().email("programado2@pr.com")
+            UserEntity userProgamador2 = UserEntity.builder().email("programado2@pr2.com")
                     .pss("$2a$10$tI9GgKjj/KpVACfAIyRSJu/R3NSLxIHqccbVzyYwIAiMA2XTBDjeS").roles(Stream
                             .of(RoleEntity.builder().role_acess("PROGRAMADOR2").build()).collect(Collectors.toList()))
                     .build();
