@@ -1,6 +1,6 @@
 ### Americas-Chellenge
 
-<h1>O sitema consite em um api e um react-app.</h1>
+<h1>O sistema consite em um api e um react-app.</h1>
 
 <h4>Back-end </h4>
 
@@ -15,7 +15,7 @@
 
 ### Subir a aplicação Java </br>
 
-<p>1° - para subir o banco de dados no diretório raiz. </p>
+<p>1° - Para subir o banco de dados, use no diretório raiz o screipt. </p>
 
 
 ``````
@@ -24,7 +24,7 @@
 
 ``````
 
-2° - aplicação java </br>
+2° -Para subir aplicação java </br>
  <p> Starte normalmente com springboot application, ela já está apontando para banco dados </br>
 </p></br>
 
@@ -37,7 +37,7 @@
   <li>Type Script de acordo com as configurações sugeridas do eslint </li>
   <li>Styled-Components para criar os componetes de estilizá-los</li>
   <li>Redux-saga e Redux aplicando ducks pattern </li>
-  <li>A aplicação possui dois themas um ligth e dark </li>
+  <li>A aplicação possui dois themes um ligth e dark </li>
 </ul>
 
 
@@ -45,7 +45,7 @@
 ### Subir aplicação React </br>
 
 
-1 - no diretório app-ts vamos instalar todos as dependências
+1 - No diretório app-ts vamos instalar todos as dependências
 
 ``````
 yarn 
@@ -55,7 +55,7 @@ yarn
 npm install
 ``````
 
-2 - rodar aplicação
+2 - rodar aplicação, ela subirá na porta 3000
 ``````
 yarn start 
 
