@@ -76,4 +76,4 @@ npm start
 </ul>
 
 
-  PS: não estão tudo dockerizado pois tive problemas com flyway e permissões dentro do container. </br>
+  PS: não esta tudo dockerizado pois tive problemas com flyway e permissões dentro do container. </br>
