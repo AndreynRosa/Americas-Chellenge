@@ -35,7 +35,7 @@
  
  <ul>
   <li>Type Script de acordo com as configurações sugeridas do eslint </li>
-  <li>Styled-Components para criar os componetes de estilizá-los</li>
+  <li>Styled-Components para criar os componetes e estilizá-los</li>
   <li>Redux-saga e Redux aplicando ducks pattern </li>
   <li>A aplicação possui dois themes um ligth e dark </li>
 </ul>
