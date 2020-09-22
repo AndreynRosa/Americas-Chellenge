@@ -7,7 +7,7 @@
 <ul>
   <li>Autenticação com Spring Seurity </li>
   <li>Autorização com JWT </li>
-  <li>Aplicando conheicimentos de SOLID e Pattern builder fluent  com ajuda do lombok </li>
+  <li>Aplicando conhecimentos de SOLID e Pattern builder fluent  com ajuda do lombok </li>
    <li>Versionamento do backo de dados com Flyway </li>
    <li>Swegger para documentação dos recursos disponíveis </li>
   <li>Junit E Mokito para testes unitários </li>
